@@ -1450,4 +1450,11 @@ test("Min and Max strings set by attributes valid", function() {
 	equal( label.text(), "", "Correct error label" );
 });
 
+test("Min number set by attribute", function () {
+    var form = $('#ranges');
+    var minNumberField = $('#minNumber');
+    var v = form.validate();
 
+    minNumberField.val('6');
+    equal(minNumberField.valid(), 1, "Minimum should be 5"); // 1 is valid
+});
